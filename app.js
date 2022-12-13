@@ -26,6 +26,10 @@ function getUrl(input){
     return serverURl + "&" + "q="+input+"&aqi=no"
 }
 
+function errorHandler(error){
+    console.log("error occured: ",error)
+}
+
 
 
 
@@ -33,8 +37,8 @@ function getUrl(input){
 
 
 btnTempTranslate.addEventListener("click", function clickHandler(){
-    console.log("clicked")
-    console.log(inputText.value)
+    console.log("temp clicked")
+    // console.log(inputText.value)
     
 
 
@@ -45,6 +49,7 @@ btnTempTranslate.addEventListener("click", function clickHandler(){
         outputText.innerHTML = "value: "+temperature + " C"
         console.log(inputText.value + " " + json.current.temp_c + " C")
     })
+    .catch(errorHandler)
 
     
 })
